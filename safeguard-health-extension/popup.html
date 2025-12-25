@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAFEGUARD-Health</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 350px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .container {
+      padding: 24px;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .logo {
+      font-size: 48px;
+      margin-bottom: 8px;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+    }
+
+    .tagline {
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .actions {
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .action-btn {
+      width: 100%;
+      background: white;
+      color: #667eea;
+      border: none;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      transition: all 0.2s;
+    }
+
+    .action-btn:last-child {
+      margin-bottom: 0;
+    }
+
+    .action-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .action-btn:active {
+      transform: translateY(0);
+    }
+
+    .status {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 16px;
+      font-size: 13px;
+    }
+
+    .status-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .status-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .status-label {
+      opacity: 0.8;
+    }
+
+    .status-value {
+      font-weight: 600;
+    }
+
+    .status-value.online {
+      color: #10b981;
+    }
+
+    .status-value.offline {
+      color: #ef4444;
+    }
+
+    .info {
+      font-size: 11px;
+      text-align: center;
+      opacity: 0.7;
+      line-height: 1.4;
+    }
+
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(102, 126, 234, 0.3);
+      border-top: 2px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">🛡️</div>
+      <h1>SAFEGUARD-Health</h1>
+      <p class="tagline">AI Safety Governor for Healthcare</p>
+    </div>
+
+    <div class="actions">
+      <h3 style="font-size: 14px; margin-bottom: 12px; opacity: 0.9;">Feature 1: Content Evaluation</h3>
+      <button class="action-btn" id="evaluateSelection">
+        <span>🎯</span>
+        <span>Evaluate Selected Text</span>
+      </button>
+      <button class="action-btn" id="evaluatePage">
+        <span>📄</span>
+        <span>Evaluate Page Content</span>
+      </button>
+      
+      <div style="height: 1px; background: rgba(255,255,255,0.2); margin: 16px 0;"></div>
+      
+      <h3 style="font-size: 14px; margin-bottom: 12px; opacity: 0.9;">Feature 2: Protected AI Chat</h3>
+      <button class="action-btn" id="openChat" style="background: linear-gradient(135deg, #10b981 0%, #059669 100%);">
+        <span>💬</span>
+        <span>Chat with Protected AI</span>
+      </button>
+    </div>
+
+    <div class="status">
+      <div class="status-item">
+        <span class="status-label">Backend Status:</span>
+        <span class="status-value" id="backendStatus">
+          <span class="spinner"></span> Checking...
+        </span>
+      </div>
+      <div class="status-item">
+        <span class="status-label">Version:</span>
+        <span class="status-value">1.0.0</span>
+      </div>
+    </div>
+
+    <p class="info">
+      ⚠️ Select text or analyze page content for safety evaluation. This tool does not provide medical advice.
+    </p>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

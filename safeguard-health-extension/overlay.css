@@ -1,0 +1,522 @@
+/* SAFEGUARD-Health Extension Styles */
+
+/* Overlay container */
+#safeguard-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(5px);
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Modal */
+.safeguard-modal {
+  background: white;
+  border-radius: 16px;
+  max-width: 700px;
+  width: 90%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Header */
+.safeguard-header {
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 16px 16px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.safeguard-logo {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.safeguard-close {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 24px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.safeguard-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+/* Body */
+.safeguard-body {
+  padding: 32px 24px;
+}
+
+/* Loading state */
+.safeguard-loading .safeguard-body {
+  text-align: center;
+}
+
+.safeguard-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #f3f4f6;
+  border-top: 4px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Decision badge */
+.safeguard-decision-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Severity */
+.safeguard-severity {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.severity-high {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.severity-medium {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.severity-low {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+/* Explanation */
+.safeguard-explanation {
+  background: #f9fafb;
+  padding: 16px;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+  margin-bottom: 24px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Evidence section */
+.safeguard-evidence {
+  background: #f0f9ff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid #bfdbfe;
+}
+
+.safeguard-evidence h4 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  color: #1e40af;
+}
+
+.evidence-item {
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.evidence-item:last-child {
+  margin-bottom: 0;
+}
+
+.evidence-claim {
+  font-size: 14px;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.evidence-status {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.status-strong-support {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.status-partial-support {
+  color: #f59e0b;
+  font-weight: 700;
+}
+
+.status-no-support {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.status-conflicting {
+  color: #ea580c;
+  font-weight: 700;
+}
+
+.confidence-badge {
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Evidence sources */
+.evidence-sources {
+  margin-top: 12px;
+  font-size: 13px;
+}
+
+.evidence-sources strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.evidence-sources ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.evidence-sources li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.evidence-sources a {
+  color: #2563eb;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.evidence-sources a:hover {
+  text-decoration: underline;
+}
+
+.source-confidence {
+  color: #6b7280;
+  font-size: 12px;
+  margin-left: 4px;
+}
+
+/* Rule flags */
+.safeguard-flags {
+  background: #fef2f2;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 24px;
+  border: 1px solid #fecaca;
+}
+
+.safeguard-flags h4 {
+  margin: 0 0 12px 0;
+  font-size: 16px;
+  color: #dc2626;
+}
+
+.safeguard-flags ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.safeguard-flags li {
+  margin-bottom: 6px;
+  color: #991b1b;
+  font-size: 14px;
+}
+
+/* Actions */
+.safeguard-actions {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.safeguard-actions button {
+  flex: 1;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.safeguard-btn-danger {
+  background: #dc2626;
+  color: white;
+}
+
+.safeguard-btn-danger:hover {
+  background: #b91c1c;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.safeguard-btn-warning {
+  background: #f59e0b;
+  color: white;
+}
+
+.safeguard-btn-warning:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.safeguard-btn-info {
+  background: #3b82f6;
+  color: white;
+}
+
+.safeguard-btn-info:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.safeguard-btn-secondary {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.safeguard-btn-secondary:hover {
+  background: #e5e7eb;
+}
+
+/* Footer */
+.safeguard-footer {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.safeguard-footer small {
+  color: #6b7280;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Error state */
+.safeguard-error-icon {
+  font-size: 64px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.safeguard-error h3 {
+  margin: 0 0 16px 0;
+  text-align: center;
+  color: #dc2626;
+}
+
+.safeguard-error p {
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.safeguard-error ul {
+  background: #f9fafb;
+  padding: 16px 16px 16px 36px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.safeguard-error li {
+  margin-bottom: 8px;
+  color: #6b7280;
+}
+
+.safeguard-error code {
+  background: #1f2937;
+  color: #10b981;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: 'Courier New', monospace;
+}
+
+/* Notifications */
+.safeguard-notification {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: white;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+  z-index: 1000000;
+  font-size: 14px;
+  font-weight: 500;
+  max-width: 350px;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.safeguard-notification.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.safeguard-notification-info {
+  border-left: 4px solid #3b82f6;
+  color: #1e40af;
+}
+
+.safeguard-notification-success {
+  border-left: 4px solid #16a34a;
+  color: #166534;
+}
+
+.safeguard-notification-warning {
+  border-left: 4px solid #f59e0b;
+  color: #92400e;
+}
+
+.safeguard-notification-error {
+  border-left: 4px solid #dc2626;
+  color: #991b1b;
+}
+
+/* Scrollbar styling for modal */
+.safeguard-modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.safeguard-modal::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0 16px 16px 0;
+}
+
+.safeguard-modal::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.safeguard-modal::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Info Modal (for action buttons) */
+.safeguard-info-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  z-index: 9999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.safeguard-info-content {
+  background: white;
+  border-radius: 16px;
+  padding: 32px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.2s ease;
+}
+
+.safeguard-info-content h3 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+  color: #1f2937;
+}
+
+.safeguard-info-content p {
+  margin: 0 0 24px 0;
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.safeguard-info-close {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #667eea;
+  color: white;
+  transition: all 0.2s;
+}
+
+.safeguard-info-close:hover {
+  background: #5568d3;
+  transform: translateY(-2px);
+}

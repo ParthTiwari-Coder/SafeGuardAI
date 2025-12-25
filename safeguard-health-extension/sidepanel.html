@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Protected AI Chat</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <div class="chat-container">
+    <!-- Header -->
+    <div class="chat-header">
+      <div class="header-content">
+        <div class="logo">🛡️</div>
+        <div class="header-text">
+          <h1>Protected AI Chat</h1>
+          <p>AI responses filtered for safety</p>
+        </div>
+      </div>
+      <div class="status-indicator">
+        <span class="status-dot" id="statusDot"></span>
+        <span class="status-text" id="statusText">Checking...</span>
+      </div>
+    </div>
+
+    <!-- Messages Area -->
+    <div class="messages-container" id="messagesContainer">
+      <div class="welcome-message">
+        <div class="welcome-icon">💬</div>
+        <h2>Welcome to Protected AI Chat</h2>
+        <p>Ask health-related questions and get safe, filtered responses.</p>
+        <div class="safety-note">
+          <strong>🛡️ Safety First:</strong>
+          <ul>
+            <li>All AI responses are evaluated for safety</li>
+            <li>Dangerous content is automatically blocked</li>
+            <li>Sources are verified from trusted authorities</li>
+            <li>Always consult healthcare professionals</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Area -->
+    <div class="input-container">
+      <div class="input-wrapper">
+        <textarea 
+          id="messageInput" 
+          placeholder="Ask a health question..."
+          rows="1"
+        ></textarea>
+        <button id="sendButton" class="send-button">
+          <span class="send-icon">➤</span>
+        </button>
+      </div>
+      <div class="input-footer">
+        <small>⚠️ This is not medical advice. Always consult professionals.</small>
+      </div>
+    </div>
+  </div>
+
+  <script src="sidepanel.js"></script>
+</body>
+</html>
