@@ -4,7 +4,7 @@
 
 A multi-layered safety system that evaluates medical content and filters AI-generated health information to prevent misinformation and harmful medical advice.
 
-> **Built at GenAI Hackathon Mumbai 2025** | Top 75 Finalist out of 418 Teams
+> **Built at GenAI Hackathon Mumbai 2025** | Top 75 Finalist out of 418 Teams  
 > Python 3.8+ | Flask 2.0+ | MIT License
 
 ---
@@ -21,16 +21,23 @@ A multi-layered safety system that evaluates medical content and filters AI-gene
 - [Usage](#usage)
 - [API Documentation](#api-documentation)
 - [Examples](#examples)
+- [Testing](#testing)
 - [Contributing](#contributing)
+- [Team](#team)
+- [Acknowledgments](#acknowledgments)
+- [Support](#support)
+- [Future Roadmap](#future-roadmap)
+- [Disclaimer](#disclaimer)
 - [License](#license)
 
 ---
 
-## 🎯 Overview
+## Overview
 
 SAFEGUARD-Health is an AI-powered safety layer that sits between users and medical AI systems. It uses a **4-layer safety architecture** to evaluate healthcare content and filter AI-generated responses, ensuring users receive only verified, evidence-based information.
 
-### **Key Capabilities:**
+### Key Capabilities
+
 - ✅ Real-time medical content evaluation
 - ✅ AI response filtering (blocks dangerous advice before it reaches users)
 - ✅ Evidence verification from 40+ trusted sources (WHO, CDC, NIH, PubMed, etc.)
@@ -39,7 +46,7 @@ SAFEGUARD-Health is an AI-powered safety layer that sits between users and medic
 
 ---
 
-## ❗ Problem Statement
+## Problem Statement
 
 **AI hallucinations in healthcare can be fatal.**
 
@@ -56,7 +63,7 @@ Current AI systems (ChatGPT, Gemini, Claude) can:
 
 ---
 
-## 💡 Solution
+## Solution
 
 SAFEGUARD-Health provides a **transparent, evidence-based safety layer** that:
 
@@ -66,16 +73,18 @@ SAFEGUARD-Health provides a **transparent, evidence-based safety layer** that:
 4. **Provides explanations** for every safety decision
 5. **Shows source credibility** with confidence scores
 
-### **Two Main Features:**
+### Two Main Features
 
-#### **Feature 1: Content Evaluation**
+#### Feature 1: Content Evaluation (Chrome Extension)
+
 Evaluate existing medical content from webpages, articles, or text.
 
 ```
 User selects text → Chrome Extension → SAFEGUARD Backend → Safety Evaluation → Result
 ```
 
-#### **Feature 2: Protected AI Chat**
+#### Feature 2: Protected AI Chat
+
 AI-powered chat where responses are filtered through SAFEGUARD before reaching users.
 
 ```
@@ -84,9 +93,9 @@ User question → Groq AI generates → SAFEGUARD filters → Safe response only
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
-### **4-Layer Safety System**
+### 4-Layer Safety System
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -145,23 +154,26 @@ User question → Groq AI generates → SAFEGUARD filters → Safe response only
 
 ---
 
-## ✨ Features
+## Features
 
-### **Core Safety Features**
+### Core Safety Features
+
 - 🚫 **Hard Blocks**: Automatically blocks dosage, diagnosis, and prescription instructions
 - 🔍 **Evidence Search**: Searches 40+ trusted medical sources in real-time
 - 📊 **Risk Scoring**: 0-100 risk score based on content analysis
 - 🎯 **Severity Classification**: LOW, MEDIUM, HIGH severity levels
 - 🏆 **Source Ranking**: 4-tier credibility system for medical sources
 
-### **Advanced Features**
+### Advanced Features
+
 - 💬 **Protected AI Chat**: Groq-powered chat with safety filtering
 - 📝 **Content Evaluation**: Analyze medical content from any webpage
 - 🌐 **Chrome Extension**: Browser integration for on-the-fly evaluation
 - 📈 **Confidence Scoring**: Weighted evidence scores (0-100)
 - 🔄 **Fallback Search**: Google Custom Search → DuckDuckGo fallback
 
-### **User Experience**
+### User Experience
+
 - ⚡ Real-time evaluation (<3 seconds)
 - 📱 Clean, intuitive interface
 - 🔗 Direct links to evidence sources
@@ -170,21 +182,23 @@ User question → Groq AI generates → SAFEGUARD filters → Safe response only
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
-### **Backend (Python)**
+### Backend (Python)
+
 - **Flask** - Web framework
 - **Google Gemini 1.5 Flash** - Safety explanations
 - **Groq (Llama 3.3 70B)** - AI chat base model
 - **Google Custom Search API** - Evidence search
 - **DuckDuckGo** - Fallback search
 
-### **Frontend (Chrome Extension)**
+### Frontend (Chrome Extension)
+
 - **JavaScript** - Extension logic
 - **HTML/CSS** - User interface
 - **Chrome Extension API** - Browser integration
 
-### **AI Models**
+### AI Models
 
 | Model | Purpose | Usage |
 |-------|---------|-------|
@@ -197,20 +211,22 @@ User question → Groq AI generates → SAFEGUARD filters → Safe response only
 
 ---
 
-## 📦 Installation
+## Installation
 
-### **Prerequisites**
+### Prerequisites
+
 - Python 3.8+
 - Node.js 14+ (for extension)
 - Chrome Browser
 
-### **1. Clone Repository**
+### 1. Clone Repository
+
 ```bash
 git clone https://github.com/yourusername/safeguard-health.git
 cd safeguard-health
 ```
 
-### **2. Backend Setup**
+### 2. Backend Setup
 
 ```bash
 # Navigate to backend
@@ -229,7 +245,7 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### **3. Configure API Keys**
+### 3. Configure API Keys
 
 Create a `.env` file in the backend directory:
 
@@ -249,11 +265,11 @@ PORT=3000
 ```
 
 **Get API Keys:**
-- **Gemini**: https://makersuite.google.com/app/apikey (FREE)
-- **Groq**: https://console.groq.com/ (FREE)
-- **Google Search**: https://developers.google.com/custom-search/v1/overview
+- **Gemini**: [https://makersuite.google.com/app/apikey](https://makersuite.google.com/app/apikey) (FREE)
+- **Groq**: [https://console.groq.com/](https://console.groq.com/) (FREE)
+- **Google Search**: [https://developers.google.com/custom-search/v1/overview](https://developers.google.com/custom-search/v1/overview)
 
-### **4. Run Backend**
+### 4. Run Backend
 
 ```bash
 python app.py
@@ -266,7 +282,7 @@ You should see:
 💬 Chat: http://localhost:3000/api/chat
 ```
 
-### **5. Install Chrome Extension**
+### 5. Install Chrome Extension
 
 ```bash
 # Navigate to extension folder
@@ -281,9 +297,9 @@ cd ../safeguard-health-extension
 
 ---
 
-## 🚀 Usage
+## Usage
 
-### **Feature 1: Evaluate Webpage Content**
+### Feature 1: Evaluate Webpage Content
 
 1. **Select text** on any webpage
 2. **Click extension icon**
@@ -301,7 +317,7 @@ Severity: HIGH
 Reason: Contains dosage instructions
 ```
 
-### **Feature 2: Protected AI Chat**
+### Feature 2: Protected AI Chat
 
 1. **Click extension icon**
 2. **Click "Chat with Protected AI"**
@@ -324,9 +340,9 @@ Evidence Sources:
 
 ---
 
-## 📚 API Documentation
+## API Documentation
 
-### **1. Health Check**
+### 1. Health Check
 
 ```http
 GET /health
@@ -341,9 +357,7 @@ GET /health
 }
 ```
 
----
-
-### **2. Evaluate Content**
+### 2. Evaluate Content
 
 ```http
 POST /api/evaluate
@@ -388,16 +402,13 @@ Content-Type: application/json
           }
         ]
       }
-    ],
-    "decision_reason": "General health information supported by trusted sources"
+    ]
   },
   "timestamp": "2025-01-18T12:00:00Z"
 }
 ```
 
----
-
-### **3. Protected AI Chat**
+### 3. Protected AI Chat
 
 ```http
 POST /api/chat
@@ -421,22 +432,15 @@ Content-Type: application/json
   "safe": true,
   "filtered_response": "For a fever, rest and stay hydrated...",
   "explanation": "This is general health advice. Always consult a healthcare professional for persistent fever.",
-  "details": {
-    "rule_flags": {
-      "contains_dosage": false,
-      "contains_emergency": false
-    },
-    "evidence_summary": [...]
-  },
   "timestamp": "2025-01-18T12:00:00Z"
 }
 ```
 
 ---
 
-## 📊 Examples
+## Examples
 
-### **Example 1: Safe General Information** ✅
+### Example 1: Safe General Information ✅
 
 **Input:** "Does egg contain vitamin B12?"
 
@@ -453,9 +457,7 @@ Evidence:
 • NIH Vitamin B12 Fact Sheet (100% confidence)
 ```
 
----
-
-### **Example 2: Blocked Dosage Instruction** 🚫
+### Example 2: Blocked Dosage Instruction 🚫
 
 **Input:** "Take 500mg paracetamol for fever"
 
@@ -467,12 +469,11 @@ Severity: HIGH
 
 Reason: Content contains prohibited dosage instructions
 
-Explanation: This content includes specific medication dosages. Please consult a healthcare professional for proper medical advice.
+Explanation: This content includes specific medication dosages. 
+Please consult a healthcare professional for proper medical advice.
 ```
 
----
-
-### **Example 3: No Evidence Found** ⚠️
+### Example 3: No Evidence Found ⚠️
 
 **Input:** "Drinking bleach cures COVID-19"
 
@@ -484,21 +485,22 @@ Severity: HIGH
 
 Reason: Medical claim lacks supporting evidence from trusted sources
 
-Explanation: No credible medical sources support this claim. Please consult a healthcare professional.
+Explanation: No credible medical sources support this claim. 
+Please consult a healthcare professional.
 ```
 
 ---
 
-## 🔬 Testing
+## Testing
 
-### **Run Backend Tests**
+### Run Backend Tests
 
 ```bash
 cd safeguard-health-backend
 python -m pytest tests/
 ```
 
-### **Manual API Test**
+### Manual API Test
 
 ```bash
 # Test chat endpoint
@@ -509,7 +511,7 @@ curl -X POST http://localhost:3000/api/chat \
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 We welcome contributions! Please follow these steps:
 
@@ -528,13 +530,7 @@ We welcome contributions! Please follow these steps:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 👥 Team
+## Team
 
 **Built at GenAI Hackathon Mumbai 2025**
 
@@ -547,7 +543,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **AI Mumbai** - For organizing the GenAI Hackathon Mumbai 2025
 - **Prasad Sawant** & **Ali Mustufa** - Event organizers
@@ -557,7 +553,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Support
+## Support
 
 - **Issues**: [GitHub Issues](https://github.com/yourusername/safeguard-health/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/safeguard-health/discussions)
@@ -565,7 +561,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🔮 Future Roadmap
+## Future Roadmap
 
 - [ ] Multi-language support (Hindi, Spanish, etc.)
 - [ ] Mobile app (iOS/Android)
@@ -577,7 +573,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📈 Project Stats
+## Project Stats
 
 - **Lines of Code**: ~2,500
 - **API Response Time**: <3 seconds
@@ -587,9 +583,15 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## ⚠️ Disclaimer
+## Disclaimer
 
 SAFEGUARD-Health is a research project and safety tool. It is **NOT a substitute for professional medical advice**. Always consult qualified healthcare professionals for medical decisions.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
