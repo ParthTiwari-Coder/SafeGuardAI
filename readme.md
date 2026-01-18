@@ -535,7 +535,7 @@ We welcome contributions! Please follow these steps:
 **Built at GenAI Hackathon Mumbai 2025**
 
 **Team Members:**
-- **Parth Tiwari** - Lead Developer
+- **Parth Tiwari** - Developer
 - **Padmaja** - Developer
 - **Tabsir** - Developer
 
@@ -598,3 +598,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 **Made with ❤️ at GenAI Hackathon Mumbai 2025**
 
 #aimumbai #buildwithai #genai
+
