@@ -591,11 +591,12 @@ SAFEGUARD-Health is a research project and safety tool. It is **NOT a substitute
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ---
 
 **Made with ❤️ at GenAI Hackathon Mumbai 2025**
 
 #aimumbai #buildwithai #genai
+
 
